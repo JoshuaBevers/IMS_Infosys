@@ -7,11 +7,6 @@
 .factorypath
 .project
 .settings
-.springBeans
-.sts4-cache
-
-
-# Created by https://www.gitignore.io/api/git,java,maven,eclipse,windows
 
 ### Eclipse ###
 
@@ -27,20 +22,8 @@ local.properties
 .loadpath
 .recommenders
 
-# External tool builders
-.externalToolBuilders/
-
 # Locally stored "Eclipse launch configurations"
 *.launch
-
-# PyDev specific (Python IDE for Eclipse)
-*.pydevproject
-
-# CDT-specific (C/C++ Development Tooling)
-.cproject
-
-# CDT- autotools
-.autotools
 
 # Java annotation processor (APT)
 .factorypath
@@ -50,18 +33,6 @@ local.properties
 
 # sbteclipse plugin
 .target
-
-# Tern plugin
-.tern-project
-
-# TeXlipse plugin
-.texlipse
-
-# STS (Spring Tool Suite)
-.springBeans
-
-# Code Recommenders
-.recommenders/
 
 # Annotation Processing
 .apt_generated/
@@ -135,28 +106,10 @@ buildNumber.properties
 .mvn/timing.properties
 .mvn/wrapper/maven-wrapper.jar
 
-### Windows ###
-# Windows thumbnail cache files
-Thumbs.db
-ehthumbs.db
-ehthumbs_vista.db
-
-# Dump file
-*.stackdump
 
 # Folder config file
 [Dd]esktop.ini
 
-# Recycle Bin used on file shares
-$RECYCLE.BIN/
-
-# Windows Installer files
-*.cab
-*.msi
-*.msix
-*.msm
-*.msp
-
-# Windows shortcuts
-*.lnk
+##shortcuts for the purpose of handling this project
 src/main/resources/db.properties
+.idea
