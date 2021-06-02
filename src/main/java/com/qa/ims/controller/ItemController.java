@@ -2,11 +2,12 @@ package com.qa.ims.controller;
 
 import java.util.List;
 
-import com.qa.ims.persistence.domain.Item;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import com.qa.ims.persistence.dao.ItemDAO;
+import com.qa.ims.persistence.domain.Item;
+
 import com.qa.ims.utils.Utils;
 
 /**
@@ -46,7 +47,7 @@ public class ItemController implements CrudController<Item> {
         LOGGER.info("Please enter a item name");
         String itemName = utils.getString();
         LOGGER.info("Please enter a price");
-        Double itemPrice = utils.getDouble();
+        double itemPrice = utils.getDouble();
         Item Item = ItemDAO.create(new Item(itemName, itemPrice));
         LOGGER.info("Item created");
         return Item;
@@ -58,11 +59,11 @@ public class ItemController implements CrudController<Item> {
     @Override
     public Item update() {
         LOGGER.info("Please enter the id of the Item you would like to update");
-        Long id = utils.getLong();
+        long id = utils.getLong();
         LOGGER.info("Please enter a item name");
         String itemName = utils.getString();
         LOGGER.info("Please enter the item's MSRP");
-        Double itemPrice = utils.getDouble();
+        double itemPrice = utils.getDouble();
         Item Item = ItemDAO.update(new Item(id, itemName, itemPrice));
         LOGGER.info("Customer Updated");
         return Item;
