@@ -1,10 +1,6 @@
 package com.qa.ims.controller;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
 import java.util.List;
-import java.util.Locale;
-
 
 import com.qa.ims.persistence.dao.ItemDAO;
 import com.qa.ims.persistence.dao.Order_ItemsDAO;
