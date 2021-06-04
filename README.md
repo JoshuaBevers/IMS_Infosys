@@ -1,89 +1,59 @@
-Coverage: 34%
-# Project Title
+Coverage: 56%
 
-One Paragraph of project description goes here
 
-## Getting Started
+#INFOSYS IMS PROJECT
 
+IMS CRUD-based CLI to interact with an IMS(Inventory ManagementSoftware). Allows
+user to create orders, items, and customers.
+
+##Getting Started
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
 
-### Prerequisites
+###Prerequisites
+Java 14.0.1 and Maven
 
-What things you need to install the software and how to install them
+#Installing
 
-```
-Give examples
-```
+Clone down the file and open in your favorite editor. Navigate to the terminal and run:
 
-### Installing
+```mvn clean install```
 
-A step by step series of examples that tell you how to get a development env running
+```mvn compile```
 
-Say what the step will be
+```mvn build```
 
-```
-Give the example
-```
+`javac -jar target/ims-0.0.1-jar-with-dependencies.jar`
 
-And repeat
+##Dependencies
 
-```
-until finished
-```
+Maven
 
-End with an example of getting some data out of the system or using it for a little demo
+JUnit
 
-## Running the tests
+Mysql
 
-Explain how to run the automated tests for this system. Break down into which tests and what they do
+ApachiLogging
 
-### Unit Tests 
+Mockit
 
-Explain what these tests test, why and how to run them
+H2Database
 
-```
-Give an example
-```
+equalsverifier
 
-### Integration Tests 
-Explain what these tests test, why and how to run them
+##Built With
+Maven - Dependency Management.
 
-```
-Give an example
-```
+git - versioning
 
-### And coding style tests
+Authors
+Chris Perrins - Initial work - christophperrins
+Infosys task - Followup work - Joshua Bevers
+License
+This project is licensed under the MIT license - see the LICENSE.md file for details
 
-Explain what these tests test and why
+For help in Choosing a license
 
-```
-Give an example
-```
-
-## Deployment
-
-Add additional notes about how to deploy this on a live system
-
-## Built With
-
-* [Maven](https://maven.apache.org/) - Dependency Management
-
-## Versioning
-
-We use [SemVer](http://semver.org/) for versioning.
-
-## Authors
-
-* **Chris Perrins** - *Initial work* - [christophperrins](https://github.com/christophperrins)
-
-## License
-
-This project is licensed under the MIT license - see the [LICENSE.md](LICENSE.md) file for details 
-
-*For help in [Choosing a license](https://choosealicense.com/)*
-
-## Acknowledgments
-
-* Hat tip to anyone whose code was used
-* Inspiration
-* etc
+Acknowledgments
+Hat tip to anyone whose code was used.
+Inspiration
+etc
