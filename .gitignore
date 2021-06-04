@@ -1,3 +1,8 @@
 .settings/
 target/
-
+.classpath
+.project
+bin/
+errors.log
+pom.xml.versionsBackup
+src/main/resources/db.properties
