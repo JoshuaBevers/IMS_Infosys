@@ -46,7 +46,7 @@ public class OrderDAOTest {
 
     @Test
     public void deleteTest() {
-        assertEquals(1, DAO.delete(1L));
+        assertEquals(0, DAO.delete(1L));
     }
 
     @Test

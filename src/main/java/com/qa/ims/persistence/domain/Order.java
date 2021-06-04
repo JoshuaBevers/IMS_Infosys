@@ -114,8 +114,17 @@ public class Order {
             this.order_items_id = order_items_id;
         }
 
-        public long getOrderItemsID() {
-            return order_items_id;
+        @Override
+        public boolean equals(Object o) {
+            if (this == o) return true;
+            if (o == null || getClass() != o.getClass()) return false;
+            OrderItems that = (OrderItems) o;
+            return order_items_id == that.order_items_id && order_id == that.order_id && item_code == that.item_code && quantity == that.quantity;
+        }
+
+        @Override
+        public int hashCode() {
+            return Objects.hash(order_items_id, order_id, item_code, quantity);
         }
 
         @Override

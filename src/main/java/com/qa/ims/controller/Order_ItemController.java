@@ -57,7 +57,7 @@ public class Order_ItemController implements CrudController<Order_Item>{
         LOGGER.info("Please enter how many you would like.");
         long quantity = utils.getLong();
         Order_Item updatedOrder = OrderItemsDAO.update(new Order_Item(id, item_id, quantity));
-        LOGGER.info("Customer Updated");
+        LOGGER.info(updatedOrder != null ? "Order created" : "Issues acquired during update." + updatedOrder);
         return updatedOrder;
     }
 

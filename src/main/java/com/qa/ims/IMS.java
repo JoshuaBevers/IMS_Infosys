@@ -71,6 +71,9 @@ public class IMS {
 					case ORDER:
 						active = this.order;
 						break;
+					case PURCHASES:
+						active = this.orderItems;
+						break;
 					case STOP:
 						return;
 					default:

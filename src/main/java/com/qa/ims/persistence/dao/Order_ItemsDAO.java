@@ -74,7 +74,7 @@ public class Order_ItemsDAO implements Dao<Order_Item> {
         return null;
     }
 
-    private Order_Item readLatest() {
+    public Order_Item readLatest() {
         try (Connection connection = DBUtils.getInstance().getConnection();
              Statement statement = connection.createStatement();
              ResultSet resultSet = statement.executeQuery("SELECT * FROM orders_item ORDER BY order_id DESC LIMIT 1");) {
@@ -95,9 +95,8 @@ public class Order_ItemsDAO implements Dao<Order_Item> {
             statement.setLong(1, order_item.getItem_code());
             statement.setLong(2, order_item.getQuantity());
             statement.setLong(3, order_item.getOrder_id());
-
             statement.executeUpdate();
-            return read(order_item.getOrderItemsID());
+            return read(order_item.getOrder_id());
         } catch (Exception e) {
             LOGGER.debug(e);
             LOGGER.error(e.getMessage());

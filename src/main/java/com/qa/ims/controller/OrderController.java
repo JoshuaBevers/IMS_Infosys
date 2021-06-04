@@ -33,7 +33,6 @@ public class OrderController implements CrudController<Order> {
      */
     @Override
     public List<Order> readAll() {
-
         List<Order> orders = OrderDAO.readAll();
         for (Order order : orders) {
             LOGGER.info(order);
@@ -52,9 +51,9 @@ public class OrderController implements CrudController<Order> {
         String comments = utils.getString();
 
         //fire off the create order_item DAO.
-        Order Order = OrderDAO.create(new Order(CustomerID, comments));
-        LOGGER.info(Order != null ? "Order created" : "Issues aquired during creation.");
-        return Order;
+        Order order = OrderDAO.create(new Order(CustomerID, comments));
+        LOGGER.info(order != null ? "Order created" : "Issues aquired during creation." + order);
+        return order;
     }
 
 
