@@ -28,3 +28,12 @@ CREATE TABLE IF NOT EXISTS `ims`.`orders_item` (
     FOREIGN KEY (order_id) REFERENCES orders(id),
     CONSTRAINT order_item_key PRIMARY KEY (order_id, item_id)
 );
+CREATE TABLE IF NOT EXISTS `ims`.`order_item` (
+    `order_id` INT NOT NULL,
+    `item_id` INT NOT NULL,
+    `quantity` INT NOT NULL,
+    FOREIGN KEY (item_id) REFERENCES items(item_id),
+    FOREIGN KEY (order_id) REFERENCES orders(id),
+    CONSTRAINT order_item_key PRIMARY KEY (order_id, item_id)
+    ON DELETE CASCADE
+);
