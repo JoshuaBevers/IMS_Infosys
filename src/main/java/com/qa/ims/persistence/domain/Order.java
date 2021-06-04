@@ -86,7 +86,6 @@ public class Order {
             this.setOrderID(order_id);
         }
 
-
         public long getItem_code(){
             return item_code;
         }

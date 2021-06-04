@@ -24,6 +24,7 @@ CREATE TABLE IF NOT EXISTS `ims`.`orders` (
     `comments` VARCHAR(255),
     PRIMARY KEY (`id`),
     FOREIGN KEY (customer_id) REFERENCES customers(customer_id)
+    ON DELETE CASCADE
 );
 
 
@@ -34,7 +35,6 @@ CREATE TABLE IF NOT EXISTS `ims`.`order_item` (
     FOREIGN KEY (item_id) REFERENCES items(item_id),
     FOREIGN KEY (order_id) REFERENCES orders(id),
     CONSTRAINT order_item_key PRIMARY KEY (order_id, item_id)
+    ON DELETE CASCADE
 );
 
-DROP TABLE `ims`.`order_item`;
-DROP TABLE `ims`.`orders`;

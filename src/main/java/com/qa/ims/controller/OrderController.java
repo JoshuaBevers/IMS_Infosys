@@ -167,7 +167,6 @@ public class OrderController implements CrudController<Order> {
 
             switch (answer.toLowerCase()) {
                 case "order":
-
                     //update order
                     LOGGER.info("Please enter the id of the Order you would like to update \n" + OrderDAO.readAll());
                     Long order_id = utils.getLong();
@@ -175,13 +174,13 @@ public class OrderController implements CrudController<Order> {
                     Long CustomerID = utils.getLong();
                     LOGGER.info("Please enter any comments");
                     String comments = utils.getString();
-                    OrderDAO.update(new Order(order_id, CustomerID, comments));
+                    Order order = OrderDAO.update(new Order(order_id, CustomerID, comments));
                     LOGGER.info("Customer Updated");
-                    break;
+                    return order;
 
                 case "item":
                     //updates an item
-                    LOGGER.info("Please enter the id of the Order you would like to update \n");
+                    LOGGER.info("Please enter the id of the Order you would like to update");
                     LOGGER.info(OrderItems.readAll());
                     Long item_order_id = utils.getLong();
                     LOGGER.info("Please enter a new Item " + ItemDAO.readAll() + "/n");
@@ -192,7 +191,7 @@ public class OrderController implements CrudController<Order> {
                     OrderItems.update(itemUpdate);
 
                     LOGGER.info("Customer Updated");
-                    break;
+                    return null;
 
                 case "add":
                     //adds an item
@@ -200,17 +199,26 @@ public class OrderController implements CrudController<Order> {
                     LOGGER.info(OrderDAO.readAll());
                     Long add_id = utils.getLong();
                     addOrder(add_id);
-                    break;
+                    return null;
 
                 case "return":
                     exitUpdate = true;
+                    LOGGER.info("returning.");
+                    break;
 
                 default:
-                    break;
+                    LOGGER.info("Failing.");
+
+                    return null;
             }
         } while (!exitUpdate);
 
         return null;
+    }
+
+    private String getAnswer() {
+        String answer = utils.getString();
+        return answer;
 
     }
 
@@ -232,7 +240,7 @@ public class OrderController implements CrudController<Order> {
 
             String answer = utils.getString();
 
-            switch (answer) {
+            switch (answer.toLowerCase()) {
                 case "order":
                     LOGGER.info("Please enter the id of the Order you would like to delete");
                     Long id = utils.getLong();
@@ -252,6 +260,7 @@ public class OrderController implements CrudController<Order> {
                     break;
             }
 
+            LOGGER.info("Sorry about this.");
 
         } while (!exitUpdate);
 

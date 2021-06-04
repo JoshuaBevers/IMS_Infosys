@@ -1,17 +1,13 @@
 package com.qa.ims.persistence.dao;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
-import java.util.ArrayList;
-import java.util.List;
-
 import com.qa.ims.persistence.domain.Item;
 import com.qa.ims.utils.DBUtils;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+
+import java.sql.*;
+import java.util.ArrayList;
+import java.util.List;
 
 public class ItemDAO implements Dao<Item> {
 
@@ -110,9 +106,10 @@ public class ItemDAO implements Dao<Item> {
     public Item update(Item item) {
         try (Connection connection = DBUtils.getInstance().getConnection();
              PreparedStatement statement = connection
-                     .prepareStatement("UPDATE items SET first_name = ? WHERE item_id = ?");) {
+                     .prepareStatement("UPDATE items SET item_name = ?, item_price = ? WHERE item_id = ?");) {
             statement.setString(1, item.getItemName());
-            statement.setLong(2, item.getId());
+            statement.setDouble(2, item.getItemPrice());
+            statement.setLong(3, item.getId());
             statement.executeUpdate();
             return read(item.getId());
         } catch (Exception e) {

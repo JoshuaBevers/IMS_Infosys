@@ -7,7 +7,7 @@
 .factorypath
 .project
 .settings
-
+db.properties
 ### Eclipse ###
 
 .metadata
@@ -113,3 +113,5 @@ buildNumber.properties
 ##shortcuts for the purpose of handling this project
 src/main/resources/db.properties
 .idea
+src/test/resources/db.properties
+src/test/resources/db.properties
