@@ -62,8 +62,9 @@ public class Order_ItemController implements CrudController<Order_Item> {
                     //read the item
                     Item curItem = itemDAO.read(itemcode);
                     double price = curItem.getItemPrice();
-                    LOGGER.info("The cost of " + curItem.getItemName() + " is " + curItem.getItemPrice());
-                    total = total + price;
+
+                    LOGGER.info("The cost of " + item.getQuantity() + " " + curItem.getItemName() + " is " + curItem.getItemPrice() + "*" + item.getQuantity() + " = " + (price * item.getQuantity()));
+                    total = total + (price * item.getQuantity());
                 }
                 LOGGER.info("The total is: " + total);
             default:
@@ -78,7 +79,7 @@ public class Order_ItemController implements CrudController<Order_Item> {
     public Order_Item create() {
         LOGGER.info("Please enter a order ID");
         long orderID = utils.getLong();
-        LOGGER.info("Please enter a customer ID");
+        LOGGER.info("Please enter an item ID");
         long customerID = utils.getLong();
         LOGGER.info("Please enter how many of this item you want.");
         long quantity = utils.getLong();
