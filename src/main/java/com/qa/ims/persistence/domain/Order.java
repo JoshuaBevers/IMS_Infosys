@@ -120,7 +120,7 @@ public class Order {
 
         @Override
         public String toString() {
-            return "id: " + order_id + " item_id: " + item_code + " quantity: " + quantity + "\n";
+            return "id: " + order_id + " item_id: " + item_code + " quantity: " + quantity;
         }
     }
 }

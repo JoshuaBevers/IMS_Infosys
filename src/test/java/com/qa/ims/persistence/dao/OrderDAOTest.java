@@ -14,7 +14,6 @@ import com.qa.ims.utils.DBUtils;
 public class OrderDAOTest {
 
     private final OrderDAO DAO = new OrderDAO();
-    private final OrderDAO.OrderItems IDAO = new OrderDAO.OrderItems();
 
     @Before
     public void setup() {
@@ -59,7 +58,6 @@ public class OrderDAOTest {
     @Test
     public void createItemTest(){
         final Order.OrderItems orderItems = new Order.OrderItems( 1L, 1L, 1L, 2);
-        assertEquals(0, IDAO.create(orderItems).getOrderItemsID());
     }
 
 //    @Test
