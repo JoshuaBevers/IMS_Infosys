@@ -1,19 +1,19 @@
 package com.qa.ims.persistence.dao;
 
-
-import com.qa.ims.persistence.domain.Item;
-import com.qa.ims.utils.DBUtils;
-import org.junit.Before;
-import org.junit.Test;
+import static org.junit.Assert.assertEquals;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import static org.junit.Assert.assertEquals;
+import com.qa.ims.persistence.domain.Order_Item;
+import org.junit.Before;
+import org.junit.Test;
 
-public class ItemDAOTest {
+import com.qa.ims.utils.DBUtils;
 
-    private final ItemDAO DAO = new ItemDAO();
+public class OrderItemDAOTest {
+
+    private final Order_ItemsDAO DAO = new Order_ItemsDAO();
 
     @Before
     public void setup() {
@@ -23,32 +23,31 @@ public class ItemDAOTest {
 
     @Test
     public void testCreate() {
-        final Item created = new Item(3L,"chris", 5.99);
+        final Order_Item created = new Order_Item(1L, 2L, 1);
         assertEquals(created, DAO.create(created));
     }
 
     @Test
     public void testReadAll() {
-        List<Item> expected = new ArrayList<>();
-        expected.add(new Item(1L,"chris", 5.99));
-        expected.add(new Item(2L,"Google", 1.99));
+        List<Order_Item> expected = new ArrayList<>();
+        expected.add(new Order_Item(1L, 1, 1));
         assertEquals(expected, DAO.readAll());
     }
 
     @Test
     public void testReadLatest() {
-        assertEquals(new Item(2L, "Google", 1.99), DAO.readLatest());
+        assertEquals(new Order_Item(1L, 1, 1), DAO.readLatest());
     }
 
     @Test
     public void testRead() {
         final long ID = 1L;
-        assertEquals(new Item(ID, "chris", 5.99), DAO.read(ID));
+        assertEquals(new Order_Item(ID, 1, 1), DAO.read(ID));
     }
 
     @Test
     public void testUpdate() {
-        final Item updated = new Item(1L, "jordan", 4.99);
+        final Order_Item updated = new Order_Item(1L, 1, 1);
         assertEquals(updated, DAO.update(updated));
     }
 
@@ -56,5 +55,4 @@ public class ItemDAOTest {
     public void testDelete() {
         assertEquals(0, DAO.delete(1));
     }
-
 }

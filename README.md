@@ -1,4 +1,4 @@
-Coverage: 56%
+Coverage: 71%
 
 
 #INFOSYS IMS PROJECT
